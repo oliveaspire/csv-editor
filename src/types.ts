@@ -1,5 +1,5 @@
 export interface CSVData {
-  rowId?: string; // Optional, added for tracking
+  rowId?: string; 
   [key: string]: string | undefined;
 }
 
