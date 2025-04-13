@@ -15,7 +15,7 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/api/data");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/data`);
         if (response.data.success && response.data.data.length > 0) {
           const fetchedData = response.data.data;
           setData(fetchedData);
