@@ -15,7 +15,11 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/data`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/data`, {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
         if (response.data.success && response.data.data.length > 0) {
           const fetchedData = response.data.data;
           setData(fetchedData);
